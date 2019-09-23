@@ -5,9 +5,9 @@ import {HomeComponent} from './core/components/home/home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'orders', loadChildren: 'app/order/order.module#OrderModule'},
-  {path: 'users', loadChildren: 'app/user/user.module#UserModule'},
-  {path: 'auth', loadChildren: 'app/auth/auth.module#AuthModule'}
+  {path: 'orders', loadChildren: () => import('app/order/order.module').then(m => m.OrderModule)},
+  {path: 'users', loadChildren: () => import('app/user/user.module').then(m => m.UserModule)},
+  {path: 'auth', loadChildren: () => import('app/auth/auth.module').then(m => m.AuthModule)}
 ];
 
 @NgModule({
