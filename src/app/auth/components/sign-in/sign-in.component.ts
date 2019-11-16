@@ -15,8 +15,7 @@ export class SignInComponent {
   }
 
   public onSignIn() {
-    const username = this.signInForm.controls['username'].value;
-    const password = this.signInForm.controls['password'].value;
+    const {username, password} = this.signInForm.value;
   }
 
   public onSubmit() {
